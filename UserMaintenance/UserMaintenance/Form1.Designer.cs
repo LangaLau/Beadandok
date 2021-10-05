@@ -31,10 +31,9 @@ namespace UserMaintenance
         {
             this.listBox1_fullname = new System.Windows.Forms.ListBox();
             this.label1_last = new System.Windows.Forms.Label();
-            this.label2_firstname = new System.Windows.Forms.Label();
-            this.textBox2_firstname = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1_lastname = new System.Windows.Forms.TextBox();
+            this.button2_SaveFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1_fullname
@@ -48,33 +47,17 @@ namespace UserMaintenance
             // label1_last
             // 
             this.label1_last.AutoSize = true;
-            this.label1_last.Location = new System.Drawing.Point(169, 15);
+            this.label1_last.Location = new System.Drawing.Point(138, 15);
             this.label1_last.Name = "label1_last";
             this.label1_last.Size = new System.Drawing.Size(35, 13);
             this.label1_last.TabIndex = 3;
             this.label1_last.Text = "label1";
             // 
-            // label2_firstname
-            // 
-            this.label2_firstname.AutoSize = true;
-            this.label2_firstname.Location = new System.Drawing.Point(169, 41);
-            this.label2_firstname.Name = "label2_firstname";
-            this.label2_firstname.Size = new System.Drawing.Size(35, 13);
-            this.label2_firstname.TabIndex = 4;
-            this.label2_firstname.Text = "label2";
-            // 
-            // textBox2_firstname
-            // 
-            this.textBox2_firstname.Location = new System.Drawing.Point(210, 38);
-            this.textBox2_firstname.Name = "textBox2_firstname";
-            this.textBox2_firstname.Size = new System.Drawing.Size(147, 20);
-            this.textBox2_firstname.TabIndex = 6;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(259, 76);
+            this.button1.Location = new System.Drawing.Point(210, 54);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 32);
+            this.button1.Size = new System.Drawing.Size(68, 32);
             this.button1.TabIndex = 7;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -87,15 +70,24 @@ namespace UserMaintenance
             this.textBox1_lastname.Size = new System.Drawing.Size(147, 20);
             this.textBox1_lastname.TabIndex = 8;
             // 
+            // button2_SaveFile
+            // 
+            this.button2_SaveFile.Location = new System.Drawing.Point(289, 54);
+            this.button2_SaveFile.Name = "button2_SaveFile";
+            this.button2_SaveFile.Size = new System.Drawing.Size(68, 32);
+            this.button2_SaveFile.TabIndex = 9;
+            this.button2_SaveFile.Text = "button2";
+            this.button2_SaveFile.UseVisualStyleBackColor = true;
+            this.button2_SaveFile.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 206);
+            this.Controls.Add(this.button2_SaveFile);
             this.Controls.Add(this.textBox1_lastname);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2_firstname);
-            this.Controls.Add(this.label2_firstname);
             this.Controls.Add(this.label1_last);
             this.Controls.Add(this.listBox1_fullname);
             this.Name = "Form1";
@@ -109,10 +101,9 @@ namespace UserMaintenance
 
         private System.Windows.Forms.ListBox listBox1_fullname;
         private System.Windows.Forms.Label label1_last;
-        private System.Windows.Forms.Label label2_firstname;
-        private System.Windows.Forms.TextBox textBox2_firstname;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1_lastname;
+        private System.Windows.Forms.Button button2_SaveFile;
     }
 }
 

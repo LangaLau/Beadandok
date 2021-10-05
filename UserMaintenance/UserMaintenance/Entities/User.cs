@@ -10,19 +10,7 @@ namespace UserMaintenance.Entities
     {
         public Guid ID { get; set; } = Guid.NewGuid();      //alapértéket adni 4*8 randomszám
 
-        public string FirtsName { get; set; }
-        public string LastName { get; set; }
-
-
-        public string FullName
-        {
-            get
-            {
-                return string.Format(
-                    "{0} {1} ",
-                    LastName, FirtsName);
-            }
-        }
+        public string FullName { get; set; }
 
     }
 }
