@@ -120,10 +120,7 @@
   <data name="Addbtn" xml:space="preserve">
     <value>Hozzáadd</value>
   </data>
-  <data name="FirstName" xml:space="preserve">
-    <value>Kereszt név:</value>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>Vezeték név:</value>
+  <data name="FullName" xml:space="preserve">
+    <value>Teljes név:</value>
   </data>
 </root>

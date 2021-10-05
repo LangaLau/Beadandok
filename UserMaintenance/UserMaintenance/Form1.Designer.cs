@@ -31,8 +31,6 @@ namespace UserMaintenance
         {
             this.listBox1_fullname = new System.Windows.Forms.ListBox();
             this.label1_last = new System.Windows.Forms.Label();
-            this.label2_firstname = new System.Windows.Forms.Label();
-            this.textBox2_firstname = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1_lastname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -48,27 +46,11 @@ namespace UserMaintenance
             // label1_last
             // 
             this.label1_last.AutoSize = true;
-            this.label1_last.Location = new System.Drawing.Point(169, 15);
+            this.label1_last.Location = new System.Drawing.Point(138, 15);
             this.label1_last.Name = "label1_last";
             this.label1_last.Size = new System.Drawing.Size(35, 13);
             this.label1_last.TabIndex = 3;
             this.label1_last.Text = "label1";
-            // 
-            // label2_firstname
-            // 
-            this.label2_firstname.AutoSize = true;
-            this.label2_firstname.Location = new System.Drawing.Point(169, 41);
-            this.label2_firstname.Name = "label2_firstname";
-            this.label2_firstname.Size = new System.Drawing.Size(35, 13);
-            this.label2_firstname.TabIndex = 4;
-            this.label2_firstname.Text = "label2";
-            // 
-            // textBox2_firstname
-            // 
-            this.textBox2_firstname.Location = new System.Drawing.Point(210, 38);
-            this.textBox2_firstname.Name = "textBox2_firstname";
-            this.textBox2_firstname.Size = new System.Drawing.Size(147, 20);
-            this.textBox2_firstname.TabIndex = 6;
             // 
             // button1
             // 
@@ -94,8 +76,6 @@ namespace UserMaintenance
             this.ClientSize = new System.Drawing.Size(372, 206);
             this.Controls.Add(this.textBox1_lastname);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2_firstname);
-            this.Controls.Add(this.label2_firstname);
             this.Controls.Add(this.label1_last);
             this.Controls.Add(this.listBox1_fullname);
             this.Name = "Form1";
@@ -109,8 +89,6 @@ namespace UserMaintenance
 
         private System.Windows.Forms.ListBox listBox1_fullname;
         private System.Windows.Forms.Label label1_last;
-        private System.Windows.Forms.Label label2_firstname;
-        private System.Windows.Forms.TextBox textBox2_firstname;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1_lastname;
     }
