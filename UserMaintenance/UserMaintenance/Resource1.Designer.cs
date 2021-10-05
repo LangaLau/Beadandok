@@ -70,7 +70,7 @@ namespace UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Teljes név:.
+        ///   Looks up a localized string similar to Kereszt név:.
         /// </summary>
         internal static string FullName {
             get {
@@ -79,7 +79,7 @@ namespace UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fájlba írás.
+        ///   Looks up a localized string similar to Vezeték név:.
         /// </summary>
         internal static string WroteToFile {
             get {
