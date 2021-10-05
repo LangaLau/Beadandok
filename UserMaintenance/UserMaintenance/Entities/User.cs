@@ -20,7 +20,7 @@ namespace UserMaintenance.Entities
             {
                 return string.Format(
                     "{0} {1} ",
-                    LastName, FullName);
+                    LastName, FirtsName);
             }
         }
 

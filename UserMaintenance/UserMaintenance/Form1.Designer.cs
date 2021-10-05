@@ -48,7 +48,7 @@ namespace UserMaintenance
             // label1_last
             // 
             this.label1_last.AutoSize = true;
-            this.label1_last.Location = new System.Drawing.Point(138, 12);
+            this.label1_last.Location = new System.Drawing.Point(169, 15);
             this.label1_last.Name = "label1_last";
             this.label1_last.Size = new System.Drawing.Size(35, 13);
             this.label1_last.TabIndex = 3;
@@ -57,7 +57,7 @@ namespace UserMaintenance
             // label2_firstname
             // 
             this.label2_firstname.AutoSize = true;
-            this.label2_firstname.Location = new System.Drawing.Point(138, 45);
+            this.label2_firstname.Location = new System.Drawing.Point(169, 41);
             this.label2_firstname.Name = "label2_firstname";
             this.label2_firstname.Size = new System.Drawing.Size(35, 13);
             this.label2_firstname.TabIndex = 4;
@@ -65,25 +65,26 @@ namespace UserMaintenance
             // 
             // textBox2_firstname
             // 
-            this.textBox2_firstname.Location = new System.Drawing.Point(195, 38);
+            this.textBox2_firstname.Location = new System.Drawing.Point(210, 38);
             this.textBox2_firstname.Name = "textBox2_firstname";
-            this.textBox2_firstname.Size = new System.Drawing.Size(162, 20);
+            this.textBox2_firstname.Size = new System.Drawing.Size(147, 20);
             this.textBox2_firstname.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(257, 85);
+            this.button1.Location = new System.Drawing.Point(259, 76);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(98, 32);
             this.button1.TabIndex = 7;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1_lastname
             // 
-            this.textBox1_lastname.Location = new System.Drawing.Point(195, 12);
+            this.textBox1_lastname.Location = new System.Drawing.Point(210, 12);
             this.textBox1_lastname.Name = "textBox1_lastname";
-            this.textBox1_lastname.Size = new System.Drawing.Size(162, 20);
+            this.textBox1_lastname.Size = new System.Drawing.Size(147, 20);
             this.textBox1_lastname.TabIndex = 8;
             // 
             // Form1
