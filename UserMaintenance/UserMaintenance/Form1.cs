@@ -24,6 +24,7 @@ namespace UserMaintenance
 
             button1.Text = Resource1.Addbtn;
             button2_SaveFile.Text = Resource1.WroteToFile;
+            button3_Delete.Text = Resource1.Delete;
 
             listBox1_fullname.DataSource = users;
             listBox1_fullname.ValueMember = "ID";
@@ -34,9 +35,7 @@ namespace UserMaintenance
         private void button1_Click(object sender, EventArgs e)
         {
             var u = new User()
-            {
-                FullName = textBox1_lastname.Text
-            };
+            { FullName = textBox1_lastname.Text };
             users.Add(u);
         }
 
@@ -48,10 +47,17 @@ namespace UserMaintenance
             //mentés helye
             using (var sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
                 foreach (var u in users)
-                    sw.WriteLine(string.Format(     
+                    sw.WriteLine(string.Format(
                         "{0};{1}",      //fajl nevének kiírása
                         u.ID,
                         u.FullName));
+        }
+
+        private void button3_Delete_Click(object sender, EventArgs e)
+        {
+            var töröl = listBox1_fullname.SelectedItem;
+            if (töröl != null)
+                users.Remove((User)töröl);
         }
     }
 }

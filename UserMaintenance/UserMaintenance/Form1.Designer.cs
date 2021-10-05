@@ -34,6 +34,7 @@ namespace UserMaintenance
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1_lastname = new System.Windows.Forms.TextBox();
             this.button2_SaveFile = new System.Windows.Forms.Button();
+            this.button3_Delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1_fullname
@@ -80,11 +81,22 @@ namespace UserMaintenance
             this.button2_SaveFile.UseVisualStyleBackColor = true;
             this.button2_SaveFile.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3_Delete
+            // 
+            this.button3_Delete.Location = new System.Drawing.Point(210, 92);
+            this.button3_Delete.Name = "button3_Delete";
+            this.button3_Delete.Size = new System.Drawing.Size(68, 32);
+            this.button3_Delete.TabIndex = 10;
+            this.button3_Delete.Text = "button2";
+            this.button3_Delete.UseVisualStyleBackColor = true;
+            this.button3_Delete.Click += new System.EventHandler(this.button3_Delete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 206);
+            this.Controls.Add(this.button3_Delete);
             this.Controls.Add(this.button2_SaveFile);
             this.Controls.Add(this.textBox1_lastname);
             this.Controls.Add(this.button1);
@@ -104,6 +116,7 @@ namespace UserMaintenance
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1_lastname;
         private System.Windows.Forms.Button button2_SaveFile;
+        private System.Windows.Forms.Button button3_Delete;
     }
 }
 

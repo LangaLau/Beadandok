@@ -70,7 +70,16 @@ namespace UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kereszt név:.
+        ///   Looks up a localized string similar to Törlés.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teljesnév:.
         /// </summary>
         internal static string FullName {
             get {
@@ -79,7 +88,7 @@ namespace UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vezeték név:.
+        ///   Looks up a localized string similar to Fájlba írás.
         /// </summary>
         internal static string WroteToFile {
             get {
