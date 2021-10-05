@@ -70,7 +70,7 @@ namespace UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kereszt név:.
+        ///   Looks up a localized string similar to Utónév:.
         /// </summary>
         internal static string FirstName {
             get {
@@ -79,7 +79,7 @@ namespace UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vezeték név:.
+        ///   Looks up a localized string similar to Vezetéknév:.
         /// </summary>
         internal static string LastName {
             get {

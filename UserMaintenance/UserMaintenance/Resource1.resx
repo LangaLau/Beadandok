@@ -121,9 +121,9 @@
     <value>Hozzáadd</value>
   </data>
   <data name="FirstName" xml:space="preserve">
-    <value>Kereszt név:</value>
+    <value>Utónév:</value>
   </data>
   <data name="LastName" xml:space="preserve">
-    <value>Vezeték név:</value>
+    <value>Vezetéknév:</value>
   </data>
 </root>
