@@ -77,12 +77,20 @@ namespace ExcelExport
             foreach (var lakas in lakasok)
             {
                 values[counter, 0] = lakas.Code;
+                values[counter, 1] = lakas.Vendor;
+                values[counter, 2] = lakas.Side;
+                values[counter, 3] = lakas.District;
+                values[counter, 4] = lakas.Elevator;
+                values[counter, 5] = lakas.NumberOfRooms;
+                values[counter, 6] = lakas.FloorArea;
+                values[counter, 7] = lakas.Price; 
+                values[counter, 8] = "";
                 counter++;
             }
 
             var range = xlSheet.get_Range(
-                             GetCell(1, 1),
-                             GetCell(100, 100));
+                             GetCell(2, 1),
+                             GetCell(1+ values.GetLength(0), values.GetLength(1)));
 
             range.Value2 = values;       //V2 kell
         }
