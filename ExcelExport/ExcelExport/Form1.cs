@@ -9,6 +9,8 @@ namespace ExcelExport
 {
     public partial class Form1 : Form
     {
+        private int _million = (int)Math.Pow(10, 6);
+
         RealEstateEntities context = new RealEstateEntities();      //ORM példányosítása
         List<Flat> lakasok;
         Excel.Application xlApp; // A Microsoft Excel alkalmazás
@@ -74,6 +76,7 @@ namespace ExcelExport
             object[,] values = new object[lakasok.Count, headers.Length];
 
             int counter = 0;
+            int floorColum = 6;
             foreach (var lakas in lakasok)
             {
                 values[counter, 0] = lakas.Code;
@@ -89,8 +92,11 @@ namespace ExcelExport
                 //    values[counter, 4] = "Nincs";
                 values[counter, 5] = lakas.NumberOfRooms;
                 values[counter, 6] = lakas.FloorArea;
-                values[counter, 7] = lakas.Price;
-                values[counter, 8] = "";
+                values[counter, 7] = lakas.Price;                           //H2/G2*1000e
+                values[counter, 8] = string.Format("={0}/{1}*{2}",          //= jel
+                    "H" + (counter + 2).ToString(),
+                    GetCell(counter + 2, floorColum + 1),
+                    _million.ToString());
                 counter++;
             }
 
