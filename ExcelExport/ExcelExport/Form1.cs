@@ -128,14 +128,22 @@ namespace ExcelExport
 
         private void FormatTable()
         {
+            int lastRowID = xlSheet.UsedRange.Rows.Count;
+
             Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
             headerRange.Font.Bold = true;
             headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             headerRange.EntireColumn.AutoFit();
             headerRange.RowHeight = 40;
-            headerRange.Interior.Color = Color.LightBlue;
-            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+            headerRange.Interior.Color = Color.LightYellow;
+            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);    
+            
+            Excel.Range complateTableRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, headers.Length));      //indulási pont     // utolso  sorszám        
+            complateTableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+            Excel.Range LastCoulom= xlSheet.get_Range(GetCell(2, 9), GetCell(lastRowID, headers.Length));
+            LastCoulom.Interior.Color = Color.LightGreen;
         }
 
         private void Form1_Load(object sender, EventArgs e)
