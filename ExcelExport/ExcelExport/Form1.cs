@@ -21,8 +21,8 @@ namespace ExcelExport
             InitializeComponent();
             LoadData();
             dataGridView1.DataSource = lakasok;
+            CreateExcel();          //!!!! meghívássss FONTOS
         }
-
         public void LoadData()
         {
             lakasok = context.Flats.ToList();
@@ -39,11 +39,11 @@ namespace ExcelExport
                 CreateTable();
 
                 xlApp.Visible = true;                       //látvány átadás 
-                xlApp.UserControl = true;                      //vezérlés felhasználonak
+                xlApp.UserControl = true;                   //vezérlés felhasználonak
             }
             catch (Exception ex)
             {
-                string hiba = string.Format("Error: {0}\nLine: {1}",ex.Message, ex.Source);
+                string hiba = string.Format("Error: {0}\nLine: {1}", ex.Message, ex.Source);
                 MessageBox.Show(hiba, "Error");
 
                 xlWB.Close(false, Type.Missing, Type.Missing);
@@ -55,10 +55,56 @@ namespace ExcelExport
 
         private void CreateTable()
         {
-            throw new NotImplementedException();
+            string[] headers = new string[]
+            {
+                 "Kód",
+                 "Eladó",
+                 "Oldal",
+                 "Kerület",
+                 "Lift",
+                 "Szobák száma",
+                 "Alapterület (m2)",
+                 "Ár (mFt)",
+                 "Négyzetméter ár (Ft/m2)"
+            };
+
+            for (int i = 0; i < headers.Length; i++)
+                xlSheet.Cells[1, i + 1] = headers[i];
+
+            object[,] values = new object[lakasok.Count, headers.Length];
+
+            int counter = 0;
+            foreach (var lakas in lakasok)
+            {
+                values[counter, 0] = lakas.Code;
+                counter++;
+            }
+
+            var range = xlSheet.get_Range(
+                             GetCell(1, 1),
+                             GetCell(100, 100));
+
+            range.Value2 = values;       //V2 kell
         }
 
-       // private void
+        private string GetCell(int x, int y)
+        {
+            string ExcelCoordinate = "";
+            int dividend = y;
+            int modulo;
+
+            while (dividend > 0)
+            {
+                modulo = (dividend - 1) % 26;
+                ExcelCoordinate = Convert.ToChar(65 + modulo).ToString() + ExcelCoordinate;
+                dividend = (int)((dividend - modulo) / 26);
+            }
+            ExcelCoordinate += x.ToString();
+
+            return ExcelCoordinate;
+        }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         { }
