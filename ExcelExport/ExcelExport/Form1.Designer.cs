@@ -80,7 +80,7 @@ namespace ExcelExport
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 47;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(697, 426);
             this.dataGridView1.TabIndex = 0;
             // 
             // flatSKDataGridViewTextBoxColumn
@@ -131,11 +131,12 @@ namespace ExcelExport
             // 
             // elevatorDataGridViewCheckBoxColumn
             // 
+            this.elevatorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.elevatorDataGridViewCheckBoxColumn.DataPropertyName = "Elevator";
             this.elevatorDataGridViewCheckBoxColumn.HeaderText = "Elevator";
             this.elevatorDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.elevatorDataGridViewCheckBoxColumn.Name = "elevatorDataGridViewCheckBoxColumn";
-            this.elevatorDataGridViewCheckBoxColumn.Width = 115;
+            this.elevatorDataGridViewCheckBoxColumn.Width = 52;
             // 
             // numberOfRoomsDataGridViewTextBoxColumn
             // 
@@ -157,17 +158,18 @@ namespace ExcelExport
             // 
             // priceDataGridViewTextBoxColumn
             // 
+            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 115;
+            this.priceDataGridViewTextBoxColumn.Width = 60;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(728, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
