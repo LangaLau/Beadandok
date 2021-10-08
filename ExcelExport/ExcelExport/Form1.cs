@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;       //Lehet = nevet adni
 using System.Reflection;
+using System.Drawing;
 
 namespace ExcelExport
 {
@@ -16,7 +17,7 @@ namespace ExcelExport
         Excel.Application xlApp; // A Microsoft Excel alkalmazás
         Excel.Workbook xlWB; // A létrehozott munkafüzet
         Excel.Worksheet xlSheet; // Munkalap a munkafüzeten belül
-
+        string[] headers;
 
         public Form1()
         {
@@ -39,6 +40,7 @@ namespace ExcelExport
                 xlSheet = xlWB.ActiveSheet;                 //munka lap kiválaszt
 
                 CreateTable();
+                FormatTable();
 
                 xlApp.Visible = true;                       //látvány átadás 
                 xlApp.UserControl = true;                   //vezérlés felhasználonak
@@ -57,8 +59,8 @@ namespace ExcelExport
 
         private void CreateTable()
         {
-            string[] headers = new string[]
-            {
+            headers = new string[]
+           {
                  "Kód",
                  "Eladó",
                  "Oldal",
@@ -68,7 +70,7 @@ namespace ExcelExport
                  "Alapterület (m2)",
                  "Ár (mFt)",
                  "Négyzetméter ár (Ft/m2)"
-            };
+           };
 
             for (int i = 0; i < headers.Length; i++)
                 xlSheet.Cells[1, i + 1] = headers[i];
@@ -124,7 +126,17 @@ namespace ExcelExport
             return ExcelCoordinate;
         }
 
-
+        private void FormatTable()
+        {
+            Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
+            headerRange.Font.Bold = true;
+            headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            headerRange.EntireColumn.AutoFit();
+            headerRange.RowHeight = 40;
+            headerRange.Interior.Color = Color.LightBlue;
+            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         { }
