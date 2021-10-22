@@ -18,7 +18,7 @@ namespace VAR
         List<Tick> Ticks;       //üres változó
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
         List<decimal> nyereségekRendezve;                       //valtozó létrehozva btn-nel elérjük
-
+        
         public Form1()
         {
             InitializeComponent();
