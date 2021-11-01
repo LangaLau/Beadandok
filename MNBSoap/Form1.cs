@@ -33,10 +33,13 @@ namespace MNBSoap
             foreach (XmlElement item in xml.DocumentElement)
             {
                 RateData r = new RateData();
-                r.Date = DateTime.Parse( item.GetAttribute("date"));
+                r.Date = DateTime.Parse(item.GetAttribute("date"));
                 XmlElement child = (XmlElement)item.FirstChild;
                 r.Currency = child.GetAttribute("curr");
-                
+                r.Value = decimal.Parse(child.InnerText);
+                int unit = int.Parse(child.GetAttribute("unit"));
+                if (unit != 0)
+                    r.Value = r.Value / unit;
                 Rates.Add(r);
             }
         }
