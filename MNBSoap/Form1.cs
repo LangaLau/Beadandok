@@ -14,11 +14,21 @@ namespace MNBSoap
 {
     public partial class Form1 : Form
     {
+        BindingList<RateDate> Rates = new BindingList<RateDate>();
+
         public Form1()
         {
             InitializeComponent();
             Consume();
+            LoadXml();
+            dataGridView1.DataSource = Rates;
         }
+
+        private void LoadXml()
+        {
+            throw new NotImplementedException();
+        }
+
         void Consume()
         {
             MNBArfolyamServiceSoapClient mnbService = new MNBArfolyamServiceSoapClient();
@@ -29,7 +39,6 @@ namespace MNBSoap
             // Ebben az esetben a "var" a GetExchangeRates visszatérési értékéből kapja a típusát.
             // Ezért a response változó valójában GetExchangeRatesResponseBody típusú.
             var response = mnbService.GetExchangeRates(request);
-
 
             // Ebben az esetben a "var" a GetExchangeRatesResult property alapján kapja a típusát.
             // Ezért a result változó valójában string típusú.
