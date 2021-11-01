@@ -22,6 +22,12 @@ namespace MNBSoap
         public Form1()
         {
             InitializeComponent();
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
+            Rates.Clear();
             string xmlstring = Consume();
             LoadXml(xmlstring);
             dataGridView1.DataSource = Rates;
@@ -68,9 +74,9 @@ namespace MNBSoap
         {
             MNBArfolyamServiceSoapClient mnbService = new MNBArfolyamServiceSoapClient();
             GetExchangeRatesRequestBody request = new GetExchangeRatesRequestBody();
-            request.currencyNames = "EUR";
-            request.startDate = "2020-01-01";
-            request.endDate = "2020-06-30";
+            request.currencyNames = cbxValuta.SelectedItem.ToString();          //"EUR"
+            request.startDate = TolPicker.Value.ToString("yyyy-MM-dd");          //"2020-01-01"
+            request.endDate = IgPicker.Value.ToString("yyyy-MM-dd");            //"2020-06-30"
             // Ebben az esetben a "var" a GetExchangeRates visszatérési értékéből kapja a típusát.
             // Ezért a response változó valójában GetExchangeRatesResponseBody típusú.
             var response = mnbService.GetExchangeRates(request);
@@ -80,6 +86,16 @@ namespace MNBSoap
             string result = response.GetExchangeRatesResult;
             //File.WriteAllText("export.xml", result);
             return result;
+        }
+
+        private void btnMehet_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void filterChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
