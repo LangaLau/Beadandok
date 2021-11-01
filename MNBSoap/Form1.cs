@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 
 namespace MNBSoap
@@ -24,6 +25,25 @@ namespace MNBSoap
             string xmlstring = Consume();
             LoadXml(xmlstring);
             dataGridView1.DataSource = Rates;
+            Charting();
+        }
+
+        private void Charting()
+        {
+            chartRateData.DataSource = Rates;
+            var series = chartRateData.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";       //x tengely dátumok
+            series.YValueMembers = "Value";     //y tengely értékek
+            series.BorderWidth = 2;
+
+            var legend = chartRateData.Legends[0];       //NO jelmagyarázat
+            legend.Enabled = false;
+
+            var chartArea = chartRateData.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;      //grid vonalaktol megszabadul
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;      //nem 0val kezdőfik
         }
 
         private void LoadXml(string input)
