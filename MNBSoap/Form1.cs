@@ -1,4 +1,5 @@
-﻿using MNBSoap.MNBServiceReference;
+﻿using MNBSoap.Entities;
+using MNBSoap.MNBServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,27 +10,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace MNBSoap
 {
     public partial class Form1 : Form
     {
-        BindingList<RateDate> Rates = new BindingList<RateDate>();
+        BindingList<RateData> Rates = new BindingList<RateData>();
 
         public Form1()
         {
             InitializeComponent();
-            Consume();
-            LoadXml();
+            string xmlstring = Consume();
+            LoadXml(xmlstring);
             dataGridView1.DataSource = Rates;
         }
 
-        private void LoadXml()
+        private void LoadXml(string input)
         {
-            throw new NotImplementedException();
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(input);
+            foreach (XmlElement item in xml.DocumentElement)
+            {
+                RateData r = new RateData();
+                r.Date = DateTime.Parse( item.GetAttribute("date"));
+                XmlElement child = (XmlElement)item.FirstChild;
+                r.Currency = child.GetAttribute("curr");
+                
+                Rates.Add(r);
+            }
         }
 
-        void Consume()
+        string Consume()
         {
             MNBArfolyamServiceSoapClient mnbService = new MNBArfolyamServiceSoapClient();
             GetExchangeRatesRequestBody request = new GetExchangeRatesRequestBody();
@@ -43,8 +55,8 @@ namespace MNBSoap
             // Ebben az esetben a "var" a GetExchangeRatesResult property alapján kapja a típusát.
             // Ezért a result változó valójában string típusú.
             string result = response.GetExchangeRatesResult;
-            File.WriteAllText("export.xml", result);
-
+            //File.WriteAllText("export.xml", result);
+            return result;
         }
     }
 }
