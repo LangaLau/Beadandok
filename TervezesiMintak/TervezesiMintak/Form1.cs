@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TervezesiMintak.Entities;
 
 namespace TervezesiMintak
 {
     public partial class Form1 : Form
     {
+        private List<Ball> _balls = new List<Ball>();
+
+        
         public Form1()
         {
             InitializeComponent();
