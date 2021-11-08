@@ -29,6 +29,11 @@ namespace TervezesiMintak.Entities
         {
             g.FillEllipse(new SolidBrush(Color.AliceBlue), 0, 0, Width, Height);
         }
+
+        public void MoveBall()
+        {
+            Left += 1;
+        }
         
     }
 }
