@@ -47,6 +47,12 @@ namespace TervezesiMintak
                     maxPosition = ball.Left;
             }
 
+            if (maxPosition > 1000)
+            {
+                var oldestBall = _balls[0];
+                mainPanel.Controls.Remove(oldestBall);
+                _balls.Remove(oldestBall);
+            }
         }
     }
 }
