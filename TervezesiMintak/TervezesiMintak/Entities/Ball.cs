@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace TervezesiMintak.Entities
 {
-    class Ball : Label
+    public class Ball : Label
     {
         public int méret = 50;
 
@@ -34,6 +34,6 @@ namespace TervezesiMintak.Entities
         {
             Left += 1;
         }
-        
+
     }
 }
