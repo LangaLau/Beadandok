@@ -39,6 +39,13 @@ namespace TervezesiMintak
 
         private void conveyorTimer_Tick(object sender, EventArgs e)
         {
+            var maxPosition = 0;
+            foreach (var ball in _balls)
+            {
+                ball.MoveBall();
+                if (ball.Left > maxPosition)
+                    maxPosition = ball.Left;
+            }
 
         }
     }
