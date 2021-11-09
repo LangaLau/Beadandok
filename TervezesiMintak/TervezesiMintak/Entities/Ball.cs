@@ -15,9 +15,9 @@ namespace TervezesiMintak.Entities
         {
             g.FillEllipse(new SolidBrush(Color.CornflowerBlue), 0, 0, Width, Height);
         }
-        public virtual void MoveBall()
-        {
-            Left += 1;
-        }
+        //public virtual void MoveBall()
+        //{
+        //    Left += 1;
+        //}
     }
 }
