@@ -16,23 +16,22 @@ namespace TervezesiMintak
     {
         private List<Toy> _toys = new List<Toy>();
 
-
-        private BallFactory _factory;
-        public BallFactory Factory
+        private BallFactory _IToyFactory;
+        public BallFactory IToyFactory
         {
-            get { return _factory; }
-            set { _factory = value; }
+            get { return _IToyFactory; }
+            set { _IToyFactory = value; }
         }
 
         public Form1()
         {
             InitializeComponent();
-            Factory = new BallFactory();
+            IToyFactory = new BallFactory();
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
-            var ball = Factory.CreateNew();
+            var ball = IToyFactory.CreateNew();
             _toys.Add(ball);
             ball.Left = -ball.Width;
             mainPanel.Controls.Add(ball);
