@@ -8,7 +8,7 @@ using TervezesiMintak.Abstractions;
 
 namespace TervezesiMintak.Entities
 {
-    class Car : Toy
+    public class Car : Toy
     {
         protected override void DrawImage(Graphics g)
         {
