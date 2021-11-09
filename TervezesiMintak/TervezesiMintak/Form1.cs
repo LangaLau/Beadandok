@@ -31,27 +31,27 @@ namespace TervezesiMintak
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
-            var ball = IToyFactory.CreateNew();
-            _toys.Add(ball);
-            ball.Left = -ball.Width;
-            mainPanel.Controls.Add(ball);
+            var toy = IToyFactory.CreateNew();
+            _toys.Add(toy);
+            toy.Left = -toy.Width;
+            mainPanel.Controls.Add(toy);
         }
 
         private void conveyorTimer_Tick(object sender, EventArgs e)
         {
             var maxPosition = 0;
-            foreach (var ball in _toys)
+            foreach (var toy in _toys)
             {
-                ball.MoveToy();
-                if (ball.Left > maxPosition)
-                    maxPosition = ball.Left;
+                toy.MoveToy();
+                if (toy.Left > maxPosition)
+                    maxPosition = toy.Left;
             }
 
             if (maxPosition > 1000)
             {
-                var oldestBall = _toys[0];
-                mainPanel.Controls.Remove(oldestBall);
-                _toys.Remove(oldestBall);
+                var oldestToy = _toys[0];
+                mainPanel.Controls.Remove(oldestToy);
+                _toys.Remove(oldestToy);
             }
         }
     }
