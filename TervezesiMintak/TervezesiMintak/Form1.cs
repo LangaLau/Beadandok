@@ -16,11 +16,11 @@ namespace TervezesiMintak
     {
         private List<Toy> _toys = new List<Toy>();
 
-        private BallFactory _IToyFactory;
+        private BallFactory _iToyFactory;
         public BallFactory IToyFactory
         {
-            get { return _IToyFactory; }
-            set { _IToyFactory = value; }
+            get { return _iToyFactory; }
+            set { _iToyFactory = value; }
         }
 
         public Form1()
@@ -54,5 +54,7 @@ namespace TervezesiMintak
                 _toys.Remove(oldestToy);
             }
         }
+
+
     }
 }
