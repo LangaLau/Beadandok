@@ -16,11 +16,17 @@ namespace TervezesiMintak
     {
         private List<Toy> _toys = new List<Toy>();
 
+        private Toy _nextToy;
+
         private BallFactory _factory;
         public BallFactory Factory
         {
             get { return _factory; }
-            set { _factory = value; }
+            set
+            {
+                _factory = value;
+                DisplayNext();
+            }
         }
 
         public Form1()
@@ -64,5 +70,11 @@ namespace TervezesiMintak
         {
             Factory = new BallFactory();
         }
+
+        private void DisplayNext()
+        {
+
+        }
+
     }
 }
