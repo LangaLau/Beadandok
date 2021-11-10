@@ -50,7 +50,7 @@ namespace TervezesiMintak
             // createTimer
             // 
             this.createTimer.Enabled = true;
-            this.createTimer.Interval = 3000;
+            this.createTimer.Interval = 2100;
             this.createTimer.Tick += new System.EventHandler(this.createTimer_Tick);
             // 
             // conveyorTimer
