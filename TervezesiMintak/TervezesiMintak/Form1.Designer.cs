@@ -105,6 +105,7 @@ namespace TervezesiMintak
             this.btnColor.Size = new System.Drawing.Size(68, 23);
             this.btnColor.TabIndex = 6;
             this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // Form1
             // 
