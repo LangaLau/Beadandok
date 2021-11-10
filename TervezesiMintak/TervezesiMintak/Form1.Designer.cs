@@ -67,6 +67,7 @@ namespace TervezesiMintak
             this.btnSelectBall.TabIndex = 1;
             this.btnSelectBall.Text = "BALL";
             this.btnSelectBall.UseVisualStyleBackColor = true;
+            this.btnSelectBall.Click += new System.EventHandler(this.btnSelectBall_Click);
             // 
             // lblNext
             // 
@@ -85,6 +86,7 @@ namespace TervezesiMintak
             this.btnSelectCar.TabIndex = 4;
             this.btnSelectCar.Text = "CAR";
             this.btnSelectCar.UseVisualStyleBackColor = true;
+            this.btnSelectCar.Click += new System.EventHandler(this.btnSelectCar_Click);
             // 
             // button1
             // 

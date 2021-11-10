@@ -16,22 +16,22 @@ namespace TervezesiMintak
     {
         private List<Toy> _toys = new List<Toy>();
 
-        private BallFactory _iToyFactory;
-        public BallFactory IToyFactory
+        private BallFactory _factory;
+        public BallFactory Factory
         {
-            get { return _iToyFactory; }
-            set { _iToyFactory = value; }
+            get { return _factory; }
+            set { _factory = value; }
         }
 
         public Form1()
         {
             InitializeComponent();
-            IToyFactory = new BallFactory();
+            Factory = new BallFactory();
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
-            var toy = IToyFactory.CreateNew();
+            var toy = Factory.CreateNew();
             _toys.Add(toy);
             toy.Left = -toy.Width;
             mainPanel.Controls.Add(toy);
@@ -55,6 +55,14 @@ namespace TervezesiMintak
             }
         }
 
+        private void btnSelectCar_Click(object sender, EventArgs e)
+        {
+            //Factory = new CarFactory();
+        }
 
+        private void btnSelectBall_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
+        }
     }
 }
