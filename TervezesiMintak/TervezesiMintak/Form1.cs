@@ -18,8 +18,8 @@ namespace TervezesiMintak
 
         private Toy _nextToy;
 
-        private BallFactory _factory;
-        public BallFactory Factory
+        private IToyFactory _factory;
+        public IToyFactory Factory
         {
             get { return _factory; }
             set
@@ -32,7 +32,7 @@ namespace TervezesiMintak
         public Form1()
         {
             InitializeComponent();
-            Factory = new BallFactory();
+            Factory = new CarFactory();
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace TervezesiMintak
 
         private void btnSelectCar_Click(object sender, EventArgs e)
         {
-            //Factory = new CarFactory();
+            Factory = new CarFactory();
         }
 
         private void btnSelectBall_Click(object sender, EventArgs e)
