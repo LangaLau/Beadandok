@@ -24,8 +24,7 @@ namespace TervezesiMintak
             get { return _factory; }
             set
             {
-                _factory = value;
-                DisplayNext();
+                _factory = value; DisplayNext();
             }
         }
 
