@@ -37,7 +37,9 @@ namespace TervezesiMintak
             this.lblNext = new System.Windows.Forms.Label();
             this.btnSelectCar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnColor = new System.Windows.Forms.Button();
+            this.btnBALLColor = new System.Windows.Forms.Button();
+            this.btnColorBox = new System.Windows.Forms.Button();
+            this.btnColorRibbon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -50,7 +52,7 @@ namespace TervezesiMintak
             // createTimer
             // 
             this.createTimer.Enabled = true;
-            this.createTimer.Interval = 2100;
+            this.createTimer.Interval = 3000;
             this.createTimer.Tick += new System.EventHandler(this.createTimer_Tick);
             // 
             // conveyorTimer
@@ -97,22 +99,44 @@ namespace TervezesiMintak
             this.button1.Text = "PRESENT";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnColor
+            // btnBALLColor
             // 
-            this.btnColor.BackColor = System.Drawing.Color.Khaki;
-            this.btnColor.Location = new System.Drawing.Point(86, 86);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(68, 23);
-            this.btnColor.TabIndex = 6;
-            this.btnColor.UseVisualStyleBackColor = false;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            this.btnBALLColor.BackColor = System.Drawing.Color.Khaki;
+            this.btnBALLColor.Location = new System.Drawing.Point(86, 86);
+            this.btnBALLColor.Name = "btnBALLColor";
+            this.btnBALLColor.Size = new System.Drawing.Size(68, 23);
+            this.btnBALLColor.TabIndex = 6;
+            this.btnBALLColor.UseVisualStyleBackColor = false;
+            this.btnBALLColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnColorBox
+            // 
+            this.btnColorBox.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnColorBox.Location = new System.Drawing.Point(160, 86);
+            this.btnColorBox.Name = "btnColorBox";
+            this.btnColorBox.Size = new System.Drawing.Size(68, 23);
+            this.btnColorBox.TabIndex = 7;
+            this.btnColorBox.UseVisualStyleBackColor = false;
+            this.btnColorBox.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnColorRibbon
+            // 
+            this.btnColorRibbon.BackColor = System.Drawing.Color.Crimson;
+            this.btnColorRibbon.Location = new System.Drawing.Point(160, 115);
+            this.btnColorRibbon.Name = "btnColorRibbon";
+            this.btnColorRibbon.Size = new System.Drawing.Size(68, 23);
+            this.btnColorRibbon.TabIndex = 8;
+            this.btnColorRibbon.UseVisualStyleBackColor = false;
+            this.btnColorRibbon.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 317);
-            this.Controls.Add(this.btnColor);
+            this.Controls.Add(this.btnColorRibbon);
+            this.Controls.Add(this.btnColorBox);
+            this.Controls.Add(this.btnBALLColor);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSelectCar);
             this.Controls.Add(this.lblNext);
@@ -135,7 +159,9 @@ namespace TervezesiMintak
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Button btnSelectCar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Button btnBALLColor;
+        private System.Windows.Forms.Button btnColorBox;
+        private System.Windows.Forms.Button btnColorRibbon;
     }
 }
 

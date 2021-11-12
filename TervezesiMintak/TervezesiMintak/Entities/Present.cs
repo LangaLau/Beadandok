@@ -8,9 +8,15 @@ using TervezesiMintak.Abstractions;
 
 namespace TervezesiMintak.Entities
 {
-    class Present : Toy
+    public class Present : Toy
     {
-        //public Present(Color szalag; doboz);
+        public SolidBrush BoxColor { get;private set; }
+        public SolidBrush RibbonColor { get; private set; }
+
+        public Present(Color boxColor, Color ribbonColor)
+        {
+
+        }
 
         protected override void DrawImage(Graphics g)
         {

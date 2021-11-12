@@ -70,7 +70,7 @@ namespace TervezesiMintak
         {
             Factory = new BallFactory
             {
-                BallColor = btnColor.BackColor
+                BallColor = btnBALLColor.BackColor
             };
         }
 
@@ -79,7 +79,7 @@ namespace TervezesiMintak
             if (_nextToy != null)
                 Controls.Remove(_nextToy);
             _nextToy = Factory.CreateNew();
-            _nextToy.Top = lblNext.Top + lblNext.Height + 20;
+            _nextToy.Top = lblNext.Top + lblNext.Height + 10;
             _nextToy.Left = lblNext.Left;
             Controls.Add(_nextToy);
         }
