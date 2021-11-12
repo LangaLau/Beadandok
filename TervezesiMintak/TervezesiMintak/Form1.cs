@@ -75,7 +75,11 @@ namespace TervezesiMintak
         }
         private void btnSelectPresent_Click(object sender, EventArgs e)
         {
-            
+            Factory = new PresentFactory()
+            {
+                BoxColor = btnColorBox.BackColor,
+                RibbonColor = btnColorRibbon.BackColor
+            };
         }
 
         private void DisplayNext()
