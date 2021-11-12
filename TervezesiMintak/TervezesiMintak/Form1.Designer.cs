@@ -36,7 +36,7 @@ namespace TervezesiMintak
             this.btnSelectBall = new System.Windows.Forms.Button();
             this.lblNext = new System.Windows.Forms.Label();
             this.btnSelectCar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSelectPresent = new System.Windows.Forms.Button();
             this.btnBALLColor = new System.Windows.Forms.Button();
             this.btnColorBox = new System.Windows.Forms.Button();
             this.btnColorRibbon = new System.Windows.Forms.Button();
@@ -90,14 +90,15 @@ namespace TervezesiMintak
             this.btnSelectCar.UseVisualStyleBackColor = true;
             this.btnSelectCar.Click += new System.EventHandler(this.btnSelectCar_Click);
             // 
-            // button1
+            // btnSelectPresent
             // 
-            this.button1.Location = new System.Drawing.Point(160, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 68);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "PRESENT";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelectPresent.Location = new System.Drawing.Point(160, 12);
+            this.btnSelectPresent.Name = "btnSelectPresent";
+            this.btnSelectPresent.Size = new System.Drawing.Size(68, 68);
+            this.btnSelectPresent.TabIndex = 5;
+            this.btnSelectPresent.Text = "PRESENT";
+            this.btnSelectPresent.UseVisualStyleBackColor = true;
+            this.btnSelectPresent.Click += new System.EventHandler(this.btnSelectPresent_Click);
             // 
             // btnBALLColor
             // 
@@ -137,7 +138,7 @@ namespace TervezesiMintak
             this.Controls.Add(this.btnColorRibbon);
             this.Controls.Add(this.btnColorBox);
             this.Controls.Add(this.btnBALLColor);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSelectPresent);
             this.Controls.Add(this.btnSelectCar);
             this.Controls.Add(this.lblNext);
             this.Controls.Add(this.btnSelectBall);
@@ -158,7 +159,7 @@ namespace TervezesiMintak
         private System.Windows.Forms.Button btnSelectBall;
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Button btnSelectCar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSelectPresent;
         private System.Windows.Forms.Button btnBALLColor;
         private System.Windows.Forms.Button btnColorBox;
         private System.Windows.Forms.Button btnColorRibbon;

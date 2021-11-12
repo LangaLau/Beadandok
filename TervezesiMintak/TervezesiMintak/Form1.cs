@@ -73,6 +73,10 @@ namespace TervezesiMintak
                 BallColor = btnBALLColor.BackColor
             };
         }
+        private void btnSelectPresent_Click(object sender, EventArgs e)
+        {
+            
+        }
 
         private void DisplayNext()
         {
