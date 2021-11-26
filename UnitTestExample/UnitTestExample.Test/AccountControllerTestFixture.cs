@@ -16,9 +16,9 @@ namespace UnitTestExample.Test
             //Arrange
             var accountController = new AccountController();
             //Act
-
+            var result = accountController.ValidateEmail(email);
             //Assert
-
+            Assert.AreEqual(result, expectedResult);
         }
     }
 }
