@@ -61,14 +61,7 @@ namespace ExcelExport
         {
             headers = new string[]
            {
-                 "Kód",
-                 "Eladó",
-                 "Oldal",
-                 "Kerület",
-                 "Lift",
-                 "Szobák száma",
-                 "Alapterület (m2)",
-                 "Ár (mFt)",
+                 "Kód", "Eladó",    "Oldal",  "Kerület",      "Lift",   "Szobák száma",      "Alapterület (m2)",     "Ár (mFt)",
                  "Négyzetméter ár (Ft/m2)"
            };
 
@@ -137,12 +130,12 @@ namespace ExcelExport
             headerRange.EntireColumn.AutoFit();
             headerRange.RowHeight = 40;
             headerRange.Interior.Color = Color.LightYellow;
-            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);    
-            
+            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
             Excel.Range complateTableRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, headers.Length));      //indulási pont     // utolso  sorszám        
             complateTableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
 
-            Excel.Range LastCoulom= xlSheet.get_Range(GetCell(2, 9), GetCell(lastRowID, headers.Length));
+            Excel.Range LastCoulom = xlSheet.get_Range(GetCell(2, 9), GetCell(lastRowID, headers.Length));
             LastCoulom.Interior.Color = Color.LightGreen;
         }
 
