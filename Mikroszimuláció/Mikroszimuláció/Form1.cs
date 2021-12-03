@@ -33,7 +33,8 @@ namespace Mikroszimuláció
             Population = GetPopulation(csvPath);
             for (int year = 2005; year <= endYear; year++)
             {
-                for (int i = 0; i < Population.Count; i++) SimStep(year, Population[i]);
+                for (int i = 0; i < Population.Count; i++)
+                    SimStep(year, Population[i]);
 
                 int nbrOfMales = (from x in Population                  //férfiak száma
                                   where x.Gender == Gender.Male && x.IsAlive
@@ -41,8 +42,8 @@ namespace Mikroszimuláció
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                Console.WriteLine(string.Format(
-                    "Év:{0}\nFiúk:{1}\nLányok:{2}\n",
+                txtMain.Text+= (string.Format(
+                    "Szimulációsév:{0}\n\tFiúk:{1}\n\tLányok:{2}\n",
                     year,
                     nbrOfMales,
                     nbrOfFemales));
