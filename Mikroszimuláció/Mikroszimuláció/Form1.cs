@@ -14,6 +14,8 @@ namespace Mikroszimuláció
 {
     public partial class Form1 : Form
     {
+        Random rng = new Random(1234);          // lehet csak pár random számmal tesztelni
+
         List<Person> Population = null;
         List<BirthProbability> BirthProbabilities = null;
         List<DeathProbability> DeathProbabilities = null;
@@ -24,6 +26,25 @@ namespace Mikroszimuláció
             Population = GetPopulation(@"C:\Temp\nép-teszt.csv"); // bemenet, hol találom a fájlt
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+
+            for (int year = 2005; year <= 2024; year++)
+            {
+                for (int i = 0; i < Population.Count; i++)
+                {
+
+                }
+                int nbrOfMales = (from x in Population                  //férfiak száma
+                                  where x.Gender == Gender.Male && x.IsAlive
+                                  select x).Count();
+                int nbrOfFemales = (from x in Population                 
+                                  where x.Gender == Gender.Female && x.IsAlive
+                                  select x).Count();
+                Console.WriteLine(string.Format(
+                    "Év:{0}\nFiúk:{1}\nLányok:{2}\n",
+                    year,                         
+                    nbrOfMales,
+                    nbrOfFemales));
+            }
         }
 
         public List<Person> GetPopulation(string csvPath)
@@ -42,7 +63,6 @@ namespace Mikroszimuláció
                     //    NbrOfChildren = int.Parse(line[2])
                     //};
                     //population.Add(p);
-
                     population.Add(new Person()
                     {
                         BirthYear = int.Parse(line[0]),
@@ -68,7 +88,7 @@ namespace Mikroszimuláció
                     {
                         Age = int.Parse(line[0]),
                         NbrOfChildren = int.Parse(line[1]),
-                        P = double.Parse(line[2].Replace(",", "."))
+                        P = double.Parse(line[2])
                     });
                 }
             }
@@ -89,7 +109,7 @@ namespace Mikroszimuláció
                     {
                         Gender = (Gender)Enum.Parse(typeof(Gender), line[0]),
                         Age = int.Parse(line[1]),
-                        P = double.Parse(line[2].Replace(",","."))       //vesző pontra kicserélése
+                        P = double.Parse(line[2])       //vesző pontra kicserélése, de én gépemen nem kellett .Replace(",",".")
                     });
                 }
             }
