@@ -21,6 +21,8 @@ namespace Mikroszimuláció
         {
             InitializeComponent();
             Population = GetPopulation(@"C:\Temp\nép-teszt.csv"); // bemenet, hol találom a fájlt
+            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
         }
 
         public List<Person> GetPopulation(string csvPath)
@@ -32,14 +34,65 @@ namespace Mikroszimuláció
                 while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine().Split(';');  //!!!fontos különben vételen ciklus
-                    var p = new Person();
-                    p.BirthYear = int.Parse(line[0]);
-                    p.Gender =(Gender)Enum.Parse(typeof(Gender),line[1]);
-                    p.NbrOfChildren = int.Parse(line[2]);
-                    population.Add(p);
+                    //var p = new Person()
+                    //{
+                    //    BirthYear = int.Parse(line[0]),
+                    //    Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
+                    //    NbrOfChildren = int.Parse(line[2])
+                    //};
+                    //population.Add(p);
+
+                    population.Add(new Person()
+                    {
+                        BirthYear = int.Parse(line[0]),
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
+                        NbrOfChildren = int.Parse(line[2])
+                    });
+                    
                 }
             }
 
+            return population;
+        }
+        public List<Person> GetBirthProbabilities(string csvPath)
+        {            //üres lista, kinyitom ,belepakolom a személyeket
+            List<Person> population = new List<Person>();
+
+            using (var sr = new StreamReader(csvPath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');  //!!!fontos különben vételen ciklus
+
+                    population.Add(new Person()
+                    {
+                        BirthYear = int.Parse(line[0]),
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
+                        NbrOfChildren = int.Parse(line[2])
+                    });
+                }
+            }
+            return population;
+        }
+
+        public List<Person> GetDeathProbabilities(string csvPath)
+        {            //üres lista, kinyitom ,belepakolom a személyeket
+            List<Person> population = new List<Person>();
+
+            using (var sr = new StreamReader(csvPath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');  //!!!fontos különben vételen ciklus
+
+                    population.Add(new Person()
+                    {
+                        BirthYear = int.Parse(line[0]),
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
+                        NbrOfChildren = int.Parse(line[2])
+                    });
+                }
+            }
             return population;
         }
     }
