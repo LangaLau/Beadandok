@@ -42,11 +42,14 @@ namespace Mikroszimuláció
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
+                int nbrSum = nbrOfFemales + nbrOfMales;
+
                 txtMain.Text += (string.Format(
-                    "Szimulációsév:{0}\n\tFiúk:{1}\n\tLányok:{2}\n",
+                    "Szimulációsév:{0}\n\tFiúk: {1}\n\tLányok: {2}\n\tÖsszesen: {3}\n\n",
                     year,
                     nbrOfMales,
-                    nbrOfFemales));
+                    nbrOfFemales,
+                   nbrSum));
             }
         }
 
