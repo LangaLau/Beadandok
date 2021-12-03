@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mikroszimuláció.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace Mikroszimuláció
         public Form1()
         {
             InitializeComponent();
+            List<Person> Population = new List<Person>();
+            List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
+            List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
         }
     }
 }
