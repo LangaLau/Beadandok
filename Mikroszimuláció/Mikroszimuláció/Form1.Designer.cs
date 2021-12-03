@@ -69,7 +69,7 @@ namespace Mikroszimuláció
             this.txtPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.12727F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPath.Location = new System.Drawing.Point(309, 10);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(312, 27);
+            this.txtPath.Size = new System.Drawing.Size(396, 27);
             this.txtPath.TabIndex = 1;
             this.txtPath.Text = "C:\\Temp\\nép-teszt.csv";
             // 
@@ -77,7 +77,7 @@ namespace Mikroszimuláció
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.12727F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnBrowse.Location = new System.Drawing.Point(627, 8);
+            this.btnBrowse.Location = new System.Drawing.Point(711, 8);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(76, 29);
             this.btnBrowse.TabIndex = 2;
@@ -88,12 +88,13 @@ namespace Mikroszimuláció
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.12727F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnStart.Location = new System.Drawing.Point(707, 8);
+            this.btnStart.Location = new System.Drawing.Point(791, 8);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(76, 29);
             this.btnStart.TabIndex = 3;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // label1
             // 
@@ -123,7 +124,7 @@ namespace Mikroszimuláció
             this.txtMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.12727F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtMain.Location = new System.Drawing.Point(12, 43);
             this.txtMain.Name = "txtMain";
-            this.txtMain.Size = new System.Drawing.Size(771, 395);
+            this.txtMain.Size = new System.Drawing.Size(855, 395);
             this.txtMain.TabIndex = 6;
             this.txtMain.Text = "";
             // 
@@ -131,7 +132,7 @@ namespace Mikroszimuláció
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 450);
+            this.ClientSize = new System.Drawing.Size(879, 450);
             this.Controls.Add(this.txtMain);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
