@@ -11,10 +11,11 @@ namespace Mikroszimuláció.Entities
         public int BirthYear { get; set; }
         public Gender Gender { get; set; }
         public int NbrOfChildren { get; set; }
+
         public bool IsAlive { get; set; }
         public Person()
         {
-            IsAlive = true;
+            IsAlive = true;     //első pillanatban életben van
         }
     }
 }
