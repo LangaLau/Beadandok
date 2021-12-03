@@ -42,7 +42,7 @@ namespace Mikroszimuláció
                 int nbrOfFemales = (from x in Population
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
-                txtMain.Text+= (string.Format(
+                txtMain.Text += (string.Format(
                     "Szimulációsév:{0}\n\tFiúk:{1}\n\tLányok:{2}\n",
                     year,
                     nbrOfMales,
@@ -158,7 +158,16 @@ namespace Mikroszimuláció
         private void btnStart_Click(object sender, EventArgs e)
         {
 
-            StartSimulation((int)nudYear.Value,txtPath.Text);
+            StartSimulation((int)nudYear.Value, txtPath.Text);
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog();
+
+            if (ofd.ShowDialog() != DialogResult.OK) return;
+
+            txtPath.Text = ofd.FileName;
         }
     }
 }
