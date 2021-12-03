@@ -20,6 +20,7 @@ namespace Mikroszimuláció
         public Form1()
         {
             InitializeComponent();
+
             Population = GetPopulation(@"C:\Temp\nép-teszt.csv"); // bemenet, hol találom a fájlt
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
@@ -48,52 +49,51 @@ namespace Mikroszimuláció
                         Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
                         NbrOfChildren = int.Parse(line[2])
                     });
-                    
-                }
-            }
-
-            return population;
-        }
-        public List<Person> GetBirthProbabilities(string csvPath)
-        {            //üres lista, kinyitom ,belepakolom a személyeket
-            List<Person> population = new List<Person>();
-
-            using (var sr = new StreamReader(csvPath, Encoding.Default))
-            {
-                while (!sr.EndOfStream)
-                {
-                    var line = sr.ReadLine().Split(';');  //!!!fontos különben vételen ciklus
-
-                    population.Add(new Person()
-                    {
-                        BirthYear = int.Parse(line[0]),
-                        Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
-                        NbrOfChildren = int.Parse(line[2])
-                    });
                 }
             }
             return population;
         }
 
-        public List<Person> GetDeathProbabilities(string csvPath)
-        {            //üres lista, kinyitom ,belepakolom a személyeket
-            List<Person> population = new List<Person>();
+        public List<BirthProbability> GetBirthProbabilities(string csvPath)
+        {
+            List<BirthProbability> birthProbabilities = new List<BirthProbability>();
 
             using (var sr = new StreamReader(csvPath, Encoding.Default))
             {
                 while (!sr.EndOfStream)
                 {
-                    var line = sr.ReadLine().Split(';');  //!!!fontos különben vételen ciklus
+                    var line = sr.ReadLine().Split(';');
 
-                    population.Add(new Person()
+                    birthProbabilities.Add(new BirthProbability()
                     {
-                        BirthYear = int.Parse(line[0]),
-                        Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
-                        NbrOfChildren = int.Parse(line[2])
+                        Age = int.Parse(line[0]),
+                        NbrOfChildren = int.Parse(line[1]),
+                        P = double.Parse(line[2])
                     });
                 }
             }
-            return population;
+            return birthProbabilities;
+        }
+
+        public List<DeathProbability> GetDeathProbabilities(string csvPath)
+        {
+            List<DeathProbability> deathProbabilities = new List<DeathProbability>();
+
+            using (var sr = new StreamReader(csvPath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+
+                    deathProbabilities.Add(new DeathProbability()
+                    {
+                        Gender = (Gender)Enum.Parse(typeof(Gender), line[0]),
+                        Age = int.Parse(line[1]),
+                        P = double.Parse(line[2])
+                    });
+                }
+            }
+            return deathProbabilities;
         }
     }
 }
