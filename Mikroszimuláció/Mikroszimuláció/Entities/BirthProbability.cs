@@ -8,8 +8,8 @@ namespace Mikroszimuláció.Entities
 {
     public class BirthProbability
     {
-        public double Kor { get; set; }
-        public double GyermekekSzama { get; set; }
-        public double ValoszinusegBirth { get; set; }
+        public int BirthYear { get; set; }
+        public int NbrOfChildren { get; set; }
+        public double P { get; set; }
     }
 }
