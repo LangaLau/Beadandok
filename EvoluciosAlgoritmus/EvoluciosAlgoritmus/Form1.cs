@@ -15,6 +15,7 @@ namespace EvoluciosAlgoritmus
     {
         GameController gc = new GameController();
         GameArea ga;
+        Brain winnerBrain = null;
 
         int populationSize = 100;
         int nbrOfSteps = 10;
@@ -28,6 +29,7 @@ namespace EvoluciosAlgoritmus
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
             label1.BringToFront();
+            btnStart.BringToFront();
 
             gc.GameOver += Gc_GameOver;
 
@@ -64,8 +66,27 @@ namespace EvoluciosAlgoritmus
                 else
                     gc.AddPlayer(b.Mutate());
             }
+
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
+
             gc.Start();
         }
-        
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
+        }
     }
 }
