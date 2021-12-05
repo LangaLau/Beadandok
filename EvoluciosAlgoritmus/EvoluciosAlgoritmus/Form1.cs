@@ -27,8 +27,9 @@ namespace EvoluciosAlgoritmus
 
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
+            label1.BringToFront();
 
-   
+            gc.GameOver += Gc_GameOver;
 
             for (int i = 0; i < populationSize; i++)
             {
@@ -37,6 +38,10 @@ namespace EvoluciosAlgoritmus
             gc.Start(true);
         }
 
-
+        private void Gc_GameOver(object sender)
+        {
+            generation++;
+            
+        }
     }
 }
